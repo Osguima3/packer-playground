@@ -1,6 +1,0 @@
-# action.yml
-name: 'Docker'
-description: 'Runs from a Dockerfile'
-runs:
-  using: 'docker'
-  image: '../../../Dockerfile'
