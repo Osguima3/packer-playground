@@ -1,13 +1,18 @@
 {
   "variables": {
-      "vpc_id": "",
-      "subnet_id": ""
+    "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_KEY`}}",
+    "vpc_id": "{{env `VPC_ID`}}",
+    "subnet_id": "{{env `SUBNET_ID`}}"
   },
   "builders": [
     {
       "type": "amazon-ebs",
-      "profile": "dev-gha",
       "region": "eu-central-1",
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
       "source_ami_filter": {
         "filters": {
           "virtualization-type": "hvm",
@@ -21,12 +26,7 @@
       "ssh_username": "ubuntu",
       "ami_name": "docker-sonarqube-{{timestamp}}",
       "associate_public_ip_address": true,
-      "vpc_id": "{{user `vpc_id`}}",
-      "subnet_id": "{{user `subnet_id`}}",
-      "tags": [{
-              "Name": "SonarQube {{timestamp}}"
-        }
-      ]
+      "tags": [ { "Name": "SonarQube {{timestamp}}" } ]
     }
   ],
   "provisioners": [
