@@ -1,6 +1,5 @@
 #!/bin/sh
 
-ls -la
-ls -la files
+ls -la sonarqube
 
-packer validate packer.json
+packer validate sonarqube/packer.json
