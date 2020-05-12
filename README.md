@@ -1,6 +1,6 @@
 # packer-playground
 
-![CI](https://github.com/dallinwright/packer-playground/workflows/CI/badge.svg)
+![CI](https://github.com/Osguima3/packer-playground/workflows/CI/badge.svg)
 
 ## Setup
 
