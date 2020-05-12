@@ -25,4 +25,4 @@ jobs:
         using: 'docker'
         image: 'Dockerfile'
         args:
-          - validate docker_sonarqube.json
+          - docker --version
