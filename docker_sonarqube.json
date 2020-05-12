@@ -1,22 +1,32 @@
 {
-  "variables": {},
+  "variables": {
+      "vpc_id": "",
+      "subnet_id": ""
+  },
   "builders": [
     {
       "type": "amazon-ebs",
-      "profile": "personal",
+      "profile": "dev-gha",
       "region": "eu-central-1",
       "source_ami_filter": {
         "filters": {
           "virtualization-type": "hvm",
-          "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
+          "name": "ubuntu/images/*ubuntu-bionic-18.04-amd64-server-*",
           "root-device-type": "ebs"
         },
         "owners": ["099720109477"],
         "most_recent": true
       },
-      "instance_type": "t3a.nano",
+      "instance_type": "t3.large",
       "ssh_username": "ubuntu",
-      "ami_name": "docker-sonarqube {{timestamp}}"
+      "ami_name": "docker-sonarqube-{{timestamp}}",
+      "associate_public_ip_address": true,
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+      "tags": [{
+              "Name": "SonarQube {{timestamp}}"
+        }
+      ]
     }
   ],
   "provisioners": [
@@ -26,7 +36,7 @@
       "destination": "/tmp/"
     },
     {
-      "type": "shell", 
+      "type": "shell",
       "script": "scripts/bootstrap_docker.sh"
     },
     {

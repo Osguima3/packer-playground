@@ -1,0 +1,15 @@
+name: Validate packer template file in a directory
+
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  packer_validate:
+    runs-on: hashicorp/packer:1.5.4
+    steps:
+      - name: Packer validate template-y without argument
+        uses: dawitnida/packer-github-actions/validate@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TEMPLATE_FILE_NAME: docker_sonarqube.json
