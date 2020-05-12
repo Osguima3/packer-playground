@@ -19,10 +19,10 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    name: 'Hello World'
-    description: 'Greet someone'
-    runs:
-      using: 'docker'
-      image: 'Dockerfile'
-      args:
-        - validate docker_sonarqube.json
+    # Runs a single command using the runners shell
+    - name: Validate
+      runs:
+        using: 'docker'
+        image: 'Dockerfile'
+        args:
+          - validate docker_sonarqube.json
