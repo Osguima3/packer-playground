@@ -1,5 +1,7 @@
 # packer-playground
 
+![CI](https://github.com/dallinwright/packer-playground/workflows/CI/badge.svg)
+
 ## Setup
 
 To run packer, do `packer build docker-sonarqube.json`
