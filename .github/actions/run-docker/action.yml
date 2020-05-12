@@ -1,4 +1,4 @@
-# run_docker.yml
+# action.yml
 name: 'Docker'
 description: 'Runs from a Dockerfile'
 runs:
