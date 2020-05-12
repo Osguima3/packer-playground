@@ -1,5 +1,5 @@
 #!/bin/sh
 
-ls -la sonarqube
+cd sonarqube || exit
 
-packer validate sonarqube/packer.json
+packer validate packer.json
