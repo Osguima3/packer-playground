@@ -2,5 +2,6 @@
 FROM hashicorp/packer:1.5.6
 
 COPY sonarqube/ /
+COPY sonarqube/packer.json /packer.json
 
-ENTRYPOINT ["ls -la", "ls -la files", "/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
