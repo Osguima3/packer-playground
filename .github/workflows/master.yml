@@ -21,8 +21,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Validate
-      run:
-        using: 'docker'
-        image: 'Dockerfile'
-        args:
-          - docker --version
+      run: docker --version
