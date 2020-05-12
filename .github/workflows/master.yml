@@ -9,11 +9,9 @@ on:
 
 jobs:
   build:
-    container:
-      steps:
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
-
-        - runs:
-            using: 'docker'
-            image: 'Dockerfile'
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - runs:
+          using: 'docker'
+          image: 'Dockerfile'
