@@ -12,6 +12,4 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - runs:
-          using: 'docker'
-          image: 'Dockerfile'
+      - uses: run_docker
