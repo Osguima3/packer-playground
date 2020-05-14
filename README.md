@@ -6,8 +6,6 @@
 
 To run packer, do `packer build docker-sonarqube.json`
 
-Note: The current JSON file is configured for an AWS profile called "personal".
-
 ## Links of interest
 
 [Packer - Getting started](https://www.packer.io/intro/getting-started/)

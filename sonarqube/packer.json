@@ -22,7 +22,7 @@
         "owners": ["099720109477"],
         "most_recent": true
       },
-      "instance_type": "t3.large",
+      "instance_type": "t3.medium",
       "ssh_username": "ubuntu",
       "ami_name": "docker-sonarqube-{{timestamp}}",
       "associate_public_ip_address": true,
